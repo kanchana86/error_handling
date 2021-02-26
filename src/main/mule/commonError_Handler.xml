@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd">
+	<error-handler name="commonError_Handler" doc:id="47bde4f1-a413-4b1f-8bb8-af35412852dd" >
+		<on-error-continue enableNotifications="true" logException="true" doc:name="On Error Continue" doc:id="f72eb1c5-0e45-4a67-a630-792552b974af" type="ANY">
+			<set-payload value='#["On Error Continue is success"]' doc:name='"On Error Continue is success"' doc:id="0591889d-e453-4d9c-8a55-86b813b559f4" />
+		</on-error-continue>
+		<on-error-propagate enableNotifications="true" logException="true" doc:name="On Error Propagate" doc:id="8503c0d0-0402-4803-88ef-8f429ff71626" >
+			<set-payload value='#["On Error Propagate is success"]' doc:name='"On Error Propagate is success"' doc:id="2f7489d2-ad23-456b-ab71-61b4d4a8db73" />
+		</on-error-propagate>
+	</error-handler>
+</mule>
