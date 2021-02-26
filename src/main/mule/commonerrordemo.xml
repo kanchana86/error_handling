@@ -11,7 +11,9 @@ http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/htt
 	<flow name="commonerrordemoFlow" doc:id="16713e56-46c3-4a87-a4ca-7d1cd1c42d3f" >
 		<http:listener doc:name="Listener" doc:id="56f71402-5792-4d2d-a859-eec0c1aaf38d" path="/api/error4" config-ref="HTTP_Listener_config"/>
 		<set-payload value='#["Before Request"]' doc:name='"Before Request"' doc:id="4bc8b6b9-4c0a-46d8-869a-f3fb128d1e8d" />
+		<logger level="INFO" doc:name="Before request" doc:id="76e6f8ea-7469-4b26-a8f3-587afa0b3fd9" message="Before request"/>
 		<http:request method="GET" doc:name="Request" doc:id="b55977af-d160-40b7-b47c-acc35df961f8" url="sssn.com"/>
+		<logger level="INFO" doc:name="After request" doc:id="a8e7ee10-3a65-4ac8-bd3d-860d550c3942" message="After request"/>
 		<set-payload value='#["After Request"]' doc:name='"After Request"' doc:id="fa16ee4d-9639-46a8-8fd0-e1be65d6ec78" />
 	</flow>
 </mule>
